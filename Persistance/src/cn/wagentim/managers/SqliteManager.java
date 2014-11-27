@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import de.wagentim.qlogger.channel.DefaultChannel;
 import de.wagentim.qlogger.channel.LogChannel;
@@ -20,29 +21,7 @@ public final class SqliteManager extends AbstractPersistanceManager
 	
 	public void connect(String dbName)
 	{
-		if( null == dbName || dbName.isEmpty() )
-		{
-			logger.log(Log.LEVEL_ERROR, "DB name is Null or Empty");
-			return;
-		}
 		
-		try
-		{
-			Class.forName(NAME_JDBC);
-			c = DriverManager.getConnection("jdbc:sqlite:"+dbName+".db");
-		}
-		catch(Exception e)
-		{
-			logger.log(Log.LEVEL_ERROR, "Failt to connect to DB 1%", dbName);
-			
-			return;
-		}
-		
-		if( null == c )
-		{
-			logger.log(Log.LEVEL_ERROR, "Connect is null");
-			return;
-		}
 	}
 	
 	public void createTable(String sql)
@@ -77,5 +56,55 @@ public final class SqliteManager extends AbstractPersistanceManager
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@Override
+	public void addEntity(Object entity)
+	{
+	    // TODO Auto-generated method stub
+	    
+	}
+
+	@Override
+	public void addEntities(List<Object> entities)
+	{
+	    // TODO Auto-generated method stub
+	    
+	}
+
+	@Override
+	public void connectDB(String dbName)
+	{
+	    if( null == dbName || dbName.isEmpty() )
+		{
+			logger.log(Log.LEVEL_ERROR, "DB name is Null or Empty");
+			return;
+		}
+		
+		try
+		{
+			Class.forName(NAME_JDBC);
+			c = DriverManager.getConnection("jdbc:sqlite:"+dbName+".db");
+		}
+		catch(Exception e)
+		{
+			logger.log(Log.LEVEL_ERROR, "Failt to connect to DB 1%", dbName);
+			
+			return;
+		}
+		
+		if( null == c )
+		{
+			logger.log(Log.LEVEL_ERROR, "Connect is null");
+			return;
+		}
+	    
+	}
+
+	@Override
+	public void disconnectDB()
+	{
+	    // TODO Auto-generated method stub
+	    
 	}
 }

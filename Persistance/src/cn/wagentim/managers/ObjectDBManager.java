@@ -1,6 +1,8 @@
 package cn.wagentim.managers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,42 +18,71 @@ public class ObjectDBManager extends AbstractPersistanceManager
 	private static final String DB_PATH = "$objectdb/db/";
 	private final LogChannel logger = QLoggerService.getChannel(QLoggerService.addChannel(new DefaultChannel("ObjectDB")));
 	private EntityManager manager = null;
+	private EntityManagerFactory factory = null;
+	private Map<Object, Object> entityManagerMap = null;
+	
+	public ObjectDBManager()
+	{
+	    super();
+	    entityManagerMap = new HashMap<Object, Object>(10);
+	}
 	
 	@Override
-	public void connect(String tableName)
+	public Object connectDB(String dbName)
 	{
-		if( null == tableName || tableName.isEmpty() )
+		if( null == dbName || dbName.isEmpty() )
 		{
 			logger.log(Log.LEVEL_ERROR, "No Table Location is set");
-			return;
+			return null;
 		}
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory(DB_PATH+tableName);
-		manager = factory.createEntityManager();
+		Object result = findDB(dbName);
+		
+		if( null == result )
+		{
+		    result = Persistence.createEntityManagerFactory(DB_PATH+dbName);
+		    cache.put(dbName, result);
+		}
+		
+		this.factory = (EntityManagerFactory) result;
+		
+		return result;
 	}
 	
-	public synchronized void addEntitiy(Object object)
+	@Override
+	public synchronized void addEntity(Object entity)
 	{
-		manager.getTransaction().begin();
+	    EntityManager manager = factory.createEntityManager(entityManagerMap);
+	    manager.getTransaction().begin();
+	    manager.persist(entity);
+	    manager.getTransaction().commit();
+	    manager.close();
+	}
+
+	@Override
+	public synchronized void addEntities(List<Object> entities)
+	{
+	    if( null == entities || entities.isEmpty() )
+	    {
+		return;
+	    }
+	    
+	    EntityManager manager = factory.createEntityManager(entityManagerMap);
+	    manager.getTransaction().begin();
+	    
+	    for(Object object: entities)
+	    {
 		manager.persist(object);
-		manager.getTransaction().commit();
+	    }
+	    
+	    manager.getTransaction().commit();
+	    manager.close();
 	}
-	
-	public synchronized void addEntites(List<Object> entities)
+
+	@Override
+	public void disconnectDB()
 	{
-		if( null == entities || entities.isEmpty() )
-		{
-			return;
-		}
-		
-		manager.getTransaction().begin();
-		
-		for(Object object: entities)
-		{
-			manager.persist(object);
-		}
-		
-		manager.getTransaction().commit();
+	    // TODO Auto-generated method stub
+	    
 	}
-	
 }
