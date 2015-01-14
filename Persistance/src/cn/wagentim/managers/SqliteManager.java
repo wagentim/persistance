@@ -73,12 +73,12 @@ public final class SqliteManager extends AbstractPersistanceManager
 	}
 
 	@Override
-	public void connectDB(String dbName)
+	public Object connectDB(String dbName)
 	{
 	    if( null == dbName || dbName.isEmpty() )
 		{
 			logger.log(Log.LEVEL_ERROR, "DB name is Null or Empty");
-			return;
+			return null;
 		}
 		
 		try
@@ -90,14 +90,16 @@ public final class SqliteManager extends AbstractPersistanceManager
 		{
 			logger.log(Log.LEVEL_ERROR, "Failt to connect to DB 1%", dbName);
 			
-			return;
+			return null;
 		}
 		
 		if( null == c )
 		{
 			logger.log(Log.LEVEL_ERROR, "Connect is null");
-			return;
+			return null;
 		}
+		
+		return c;
 	    
 	}
 
