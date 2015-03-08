@@ -8,24 +8,24 @@ public final class PersistanceManagerFactory
     
     public static final IPersistanceManager createManager(int type)
     {
-	if( type < 0 )
-	{
-	    return null;
-	}
-	
-	switch(type)
-	{
-		case DB_OBJECT_DB:
-		    return new ObjectDBManager();
-		case DB_SQLITE:
-		    return new SqliteManager();
-		default:
+		if( type < 0 )
+		{
 		    return null;
-	}
+		}
+		
+		switch(type)
+		{
+			case DB_OBJECT_DB:
+			    return new ObjectDBManager();
+			case DB_SQLITE:
+			    return new SqliteManager();
+			default:
+			    return null;
+		}
     }
     
     public static final IPersistanceManager createManager()
     {
-	return new ObjectDBManager();
+    	return new ObjectDBManager();
     }
 }
