@@ -27,6 +27,7 @@ public class ResourceEntity implements IEntity, Serializable
 	private String domain = StringConstants.EMPTY_STRING;
 	private String path = StringConstants.EMPTY_STRING;
 	private WebSiteEntity owner;
+	private String encoding = StringConstants.EMPTY_STRING;
 
 	public Long getId()
 	{
@@ -107,6 +108,14 @@ public class ResourceEntity implements IEntity, Serializable
     public void setOwner(WebSiteEntity owner)
     {
         this.owner = owner;
+    }
+    public String getEncoding()
+    {
+        return encoding;
+    }
+    public void setEncoding(String encoding)
+    {
+        this.encoding = encoding;
     }
 
 }

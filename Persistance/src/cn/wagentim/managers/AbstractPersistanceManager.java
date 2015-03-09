@@ -11,11 +11,14 @@ import cn.wagentim.utils.StatementHelper;
 public abstract class AbstractPersistanceManager implements IPersistanceManager
 {
 
-	public Long addOrUpdateEntity(Object entity, Long id)
+    public Long addOrUpdateEntity(IEntity entity)
 	{
+        Long id = entity.getId();
+
 		if( null == id || 0 == id )
     	{
-    		return addNewEntity(entity);
+    		addNewEntity(entity);
+    		return entity.getId();
     	}
     	else
     	{
@@ -23,7 +26,7 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
     		return id;
     	}
 	}
-	
+
 	protected void mergeEntity(final Object entity)
     {
 		EntityManager em = getEntityManager();
@@ -40,11 +43,11 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
 		em.getTransaction().begin();
 		em.persist(entity);
 		em.getTransaction().commit();
-		
+
 		IEntity result = (IEntity) em.find(entity.getClass(), entity);
 		return result.getId();
     }
-	
+
 	public List<?> getAllEntities(Class<?> entityType)
     {
 		EntityManager em = getEntityManager();
