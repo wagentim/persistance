@@ -142,4 +142,13 @@ public class WebSiteEntity implements Serializable, IEntity
     {
         this.schema = schema;
     }
+    
+    public void addResource(ResourceEntity resource)
+    {
+    	resources.add(resource);
+    	if( resource.getOwner() != this )
+    	{
+    		resource.setOwner(this);
+    	}
+    }
 }
