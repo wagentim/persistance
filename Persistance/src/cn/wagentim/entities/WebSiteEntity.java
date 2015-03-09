@@ -1,12 +1,19 @@
 package cn.wagentim.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.jdo.annotations.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import cn.wagentim.basicutils.StringConstants;
+import cn.wagentim.webs.IWebTypes;
 
 /**
  * @author wagentim
@@ -18,21 +25,23 @@ public class WebSiteEntity implements Serializable, IEntity
 {
 
 	private static final long serialVersionUID = -743122521914799055L;
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="WEB_ID")
 	private Long id;
-	private String name;
-	private String host;
-	private String entryPoint;
-	private String auth;
-	private String userName;
-	private String password;
-	private String data;
-	
-	public WebSiteEntity()
-	{
-	}
+	private String name = StringConstants.EMPTY_STRING;
+	private String host = StringConstants.EMPTY_STRING;
+	private String path = StringConstants.EMPTY_STRING;
+	private int webType = IWebTypes.TYPE_UNSORTED;
+	private String pageContent = StringConstants.EMPTY_STRING;
+	private String userName = StringConstants.EMPTY_STRING;
+	private String password = StringConstants.EMPTY_STRING;
+	private String auth = StringConstants.EMPTY_STRING;
+	private String schema = StringConstants.EMPTY_STRING;
+	@OneToMany(orphanRemoval=true)
+	@JoinColumn(name="WEB_ID")
+	private List<ResourceEntity> resources;
 
 	public Long getId()
 	{
@@ -64,97 +73,73 @@ public class WebSiteEntity implements Serializable, IEntity
 		this.host = host;
 	}
 
-	public String getEntryPoint()
+	public String getPath()
 	{
-		return entryPoint;
+		return path;
 	}
 
-	public void setEntryPoint(String entryPoint)
+	public void setPath(String path)
 	{
-		this.entryPoint = entryPoint;
+		this.path = path;
 	}
 
-	public String getAuth()
-	{
-		return auth;
-	}
+    public int getWebType()
+    {
+        return webType;
+    }
 
-	public void setAuth(String auth)
-	{
-		this.auth = auth;
-	}
+    public void setWebType(int webType)
+    {
+        this.webType = webType;
+    }
 
-	public String getUserName()
-	{
-		return userName;
-	}
+    public String getPageContent()
+    {
+        return pageContent;
+    }
 
-	public void setUserName(String userName)
-	{
-		this.userName = userName;
-	}
+    public void setPageContent(String pageContent)
+    {
+        this.pageContent = pageContent;
+    }
 
-	public String getPassword()
-	{
-		return password;
-	}
+    public String getUserName()
+    {
+        return userName;
+    }
 
-	public void setPassword(String password)
-	{
-		this.password = password;
-	}
+    public void setUserName(String userName)
+    {
+        this.userName = userName;
+    }
 
-	public String getData()
-	{
-		return data;
-	}
+    public String getPassword()
+    {
+        return password;
+    }
 
-	public void setData(String data)
-	{
-		this.data = data;
-	}
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
 
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((host == null) ? 0 : host.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
+    public String getAuth()
+    {
+        return auth;
+    }
 
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		WebSiteEntity other = (WebSiteEntity) obj;
-		if (host == null)
-		{
-			if (other.host != null)
-				return false;
-		} else if (!host.equals(other.host))
-			return false;
-		if (id == null)
-		{
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
+    public void setAuth(String auth)
+    {
+        this.auth = auth;
+    }
 
-	@Override
-	public String toString()
-	{
-		return "WebSiteEntity [id=" + id + ", name=" + name + ", domain="
-				+ host + ", entryPoint=" + entryPoint + ", auth=" + auth
-				+ ", userName=" + userName + ", password=" + password
-				+ ", data=" + data + "]";
-	}
+    public String getSchema()
+    {
+        return schema;
+    }
+
+    public void setSchema(String schema)
+    {
+        this.schema = schema;
+    }
 }

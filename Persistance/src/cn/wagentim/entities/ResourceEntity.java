@@ -26,7 +26,8 @@ public class ResourceEntity implements IEntity, Serializable
 	private long detectTime = System.currentTimeMillis();
 	private String domain = StringConstants.EMPTY_STRING;
 	private String path = StringConstants.EMPTY_STRING;
-	
+	private WebSiteEntity owner;
+
 	public Long getId()
 	{
 		return id;
@@ -99,5 +100,13 @@ public class ResourceEntity implements IEntity, Serializable
 	{
 		this.domain = domain;
 	}
-	
+    public WebSiteEntity getOwner()
+    {
+        return owner;
+    }
+    public void setOwner(WebSiteEntity owner)
+    {
+        this.owner = owner;
+    }
+
 }
