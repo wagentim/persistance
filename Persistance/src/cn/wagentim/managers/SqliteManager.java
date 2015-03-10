@@ -12,7 +12,7 @@ public final class SqliteManager extends AbstractPersistanceManager
 {
 	private static final String NAME_JDBC = "org.sqlite.JDBC";
 	private Connection c;
-	
+
 	@Override
 	public void connectDB(String uri, int port, String dbName)
 	{
@@ -20,7 +20,7 @@ public final class SqliteManager extends AbstractPersistanceManager
 		{
 			return;
 		}
-		
+
 		try
 		{
 			Class.forName(NAME_JDBC);
@@ -30,12 +30,12 @@ public final class SqliteManager extends AbstractPersistanceManager
 		{
 			return;
 		}
-		
+
 		if( null == c )
 		{
 			return;
 		}
-	    
+
 	}
 
 	@Override

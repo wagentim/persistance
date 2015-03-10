@@ -9,8 +9,8 @@ public class ObjectDBManager extends AbstractPersistanceManager
 {
 	private static final String DB_PATH = "$objectdb/db/";
 	private EntityManager manager = null;
-	
-	
+
+
 	@Override
 	public void connectDB(String uri, int port, String dbName)
 	{
@@ -18,9 +18,9 @@ public class ObjectDBManager extends AbstractPersistanceManager
 		{
 			return ;
 		}
-		
+
 		manager = Persistence.createEntityManagerFactory(DB_PATH+dbName).createEntityManager();
-		
+
 	}
 
 	@Override

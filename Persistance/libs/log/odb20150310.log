@@ -1,0 +1,192 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 10:48:22 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 5788@eso1206
+
+[2015-03-10 10:48:23 #2 type.registry] 
+New type cn.wagentim.entities.IEntity
+
+[2015-03-10 10:48:23 #3 type.registry] 
+New type cn.wagentim.entities.WebSiteEntity
+
+[2015-03-10 10:48:23 #4 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 10:48:23 #5 type.registry] 
+New type cn.wagentim.entities.ResourceEntity
+
+[2015-03-10 10:48:23 #6 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+[2015-03-10 10:48:23 #7 type.registry] 
+New type byte[]
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 10:56:09 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' has been recovered (tr. 1-4)
+
+[2015-03-10 10:56:09 #2 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 2560@eso1206
+
+[2015-03-10 10:56:09 #3 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 10:56:09 #4 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 11:11:10 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 5956@eso1206
+
+[2015-03-10 11:11:10 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 11:11:10 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 11:11:40 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' has been recovered (tr. 5-5)
+
+[2015-03-10 11:11:40 #2 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 5132@eso1206
+
+[2015-03-10 11:11:40 #3 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 11:11:40 #4 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:28:21 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 6108@eso1206
+
+[2015-03-10 12:28:21 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:28:21 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:36:50 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' has been recovered (tr. 6-6)
+
+[2015-03-10 12:36:50 #2 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 1432@eso1206
+
+[2015-03-10 12:36:50 #3 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:36:50 #4 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:38:49 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' has been recovered (tr. 7-7)
+
+[2015-03-10 12:38:49 #2 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 2816@eso1206
+
+[2015-03-10 12:38:49 #3 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:38:49 #4 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:40:30 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' has been recovered (tr. 8-8)
+
+[2015-03-10 12:40:30 #2 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 976@eso1206
+
+[2015-03-10 12:40:30 #3 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:40:30 #4 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:41:04 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 4444@eso1206
+
+[2015-03-10 12:41:04 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:41:04 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 12:41:11 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 3392@eso1206
+
+[2015-03-10 12:41:11 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 12:41:11 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 13:41:51 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 6108@eso1206
+
+[2015-03-10 13:41:51 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 13:41:51 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 13:42:33 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 1168@eso1206
+
+[2015-03-10 13:42:33 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 13:42:33 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 14:58:11 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 5132@eso1206
+
+[2015-03-10 14:58:11 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 14:58:11 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 14:58:46 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 6548@eso1206
+
+[2015-03-10 14:58:46 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 14:58:46 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2015-03-10 15:04:44 #1 store] 
+Database 'C:\Users\bihu8398\git\persistance\Persistance\libs\db\spar_handy.odb' is opened by 5260@eso1206
+
+[2015-03-10 15:04:44 #2 type] 
+Type cn.wagentim.entities.WebSiteEntity is not enhanced.
+
+[2015-03-10 15:04:44 #3 type] 
+Type cn.wagentim.entities.ResourceEntity is not enhanced.
+

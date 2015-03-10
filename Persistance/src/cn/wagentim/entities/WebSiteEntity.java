@@ -1,6 +1,7 @@
 package cn.wagentim.entities;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.List;
 
 import javax.jdo.annotations.Column;
@@ -42,6 +43,8 @@ public class WebSiteEntity implements Serializable, IEntity
 	@OneToMany(orphanRemoval=true)
 	@JoinColumn(name="WEB_ID")
 	private List<ResourceEntity> resources;
+	private Long resourceMap = 0L;
+	private String clientID = StringConstants.EMPTY_STRING;
 
 	public Long getId()
 	{
@@ -141,5 +144,30 @@ public class WebSiteEntity implements Serializable, IEntity
     public void setSchema(String schema)
     {
         this.schema = schema;
+    }
+
+    public URI getLoginURI()
+    {
+        return null;
+    }
+
+    public Long getResourceMap()
+    {
+        return resourceMap;
+    }
+
+    public void setResourceMap(Long resourceMap)
+    {
+        this.resourceMap = resourceMap;
+    }
+
+    public String getClientID()
+    {
+        return clientID;
+    }
+
+    public void setClientID(String clientID)
+    {
+        this.clientID = clientID;
     }
 }

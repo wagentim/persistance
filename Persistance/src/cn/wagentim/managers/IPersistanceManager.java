@@ -11,4 +11,5 @@ public interface IPersistanceManager
 	public void connectDB(String uri, int port, String name);
 	public List<?> getAllEntities(Class<?> entityType);
 	public void deleteEntity(Class<?> entityType, Long id);
+	public Object getEntity(Class<?> type, Long id);
 }

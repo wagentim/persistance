@@ -67,4 +67,12 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
 		em.remove(c);
 		em.getTransaction().commit();
 	}
+
+
+    @Override
+    public Object getEntity(Class<?> type, Long id)
+    {
+        EntityManager em = getEntityManager();
+        return em.find(type, id);
+    }
 }
