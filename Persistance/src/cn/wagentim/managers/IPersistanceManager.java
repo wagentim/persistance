@@ -2,7 +2,7 @@ package cn.wagentim.managers;
 
 import java.util.List;
 
-import cn.wagentim.entities.IEntity;
+import cn.wagentim.entities.web.IEntity;
 
 
 public interface IPersistanceManager

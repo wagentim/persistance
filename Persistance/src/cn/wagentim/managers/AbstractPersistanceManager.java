@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import cn.wagentim.entities.IEntity;
+import cn.wagentim.entities.web.IEntity;
 import cn.wagentim.utils.StatementHelper;
 
 

@@ -1,4 +1,4 @@
-package cn.wagentim.entities;
+package cn.wagentim.entities.web;
 
 public interface IResourceType
 {
