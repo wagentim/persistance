@@ -39,7 +39,7 @@ public final class SqliteManager extends AbstractPersistanceManager
 	}
 
 	@Override
-	protected EntityManager getEntityManager()
+	public EntityManager getEntityManager()
 	{
 		// TODO Auto-generated method stub
 		return null;

@@ -26,6 +26,22 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
     		return id;
     	}
 	}
+    
+    public Long addOrUpdateEntityOnlyPositiveNumber(IEntity entity)
+	{
+        Long id = entity.getId();
+
+        System.out.println("ID: " + id);
+		if( id <= 0 )
+    	{
+    		return (long) 0;
+    	}
+    	else
+    	{
+    		mergeEntity(entity);
+    		return id;
+    	}
+	}
 
 	protected void mergeEntity(final Object entity)
     {
@@ -34,8 +50,6 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
     	em.merge(entity);
     	em.getTransaction().commit();
     }
-
-	abstract protected EntityManager getEntityManager();
 
 	protected Long addNewEntity(final Object entity)
     {
@@ -66,5 +80,24 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
 		em.getTransaction().begin();
 		em.remove(c);
 		em.getTransaction().commit();
+	}
+	
+	public void addOrUpdateEntityList(List<IEntity> entities)
+	{
+		if(entities.isEmpty())
+		{
+			return;
+		}
+		
+		for( int i = 0; i < entities.size(); i++ )
+		{
+			IEntity entity = entities.get(i);
+			
+			if( null != entity )
+			{
+				addOrUpdateEntityOnlyPositiveNumber(entity);
+			}
+		}
+		
 	}
 }
