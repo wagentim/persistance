@@ -22,6 +22,9 @@ public final class Ticket implements IEntity
 	/* C */
 	private String changeTS = StringConstants.EMPTY_STRING;
 	
+	/* G */
+	private String market = StringConstants.EMPTY_STRING;
+	
 	/* I */
 	private String eproject = StringConstants.EMPTY_STRING;
 	
@@ -49,7 +52,7 @@ public final class Ticket implements IEntity
 	/* Z */
 	private String deviceType = StringConstants.EMPTY_STRING;
 	
-	/* AK */
+	/* AL */
 	private String rating = StringConstants.EMPTY_STRING;
 	
 	/* AM */
@@ -433,6 +436,16 @@ public final class Ticket implements IEntity
 	public void setChangeTSSupplier(String changeTSSupplier)
 	{
 		this.changeTSSupplier = changeTSSupplier;
+	}
+	
+	public String getMarket()
+	{
+		return market;
+	}
+
+	public void setMarket(String market)
+	{
+		this.market = market;
 	}
 
 	@Override
