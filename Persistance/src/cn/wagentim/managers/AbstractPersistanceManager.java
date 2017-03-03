@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import cn.wagentim.entities.web.IEntity;
+import cn.wagentim.entities.work.SheetTicketEntity;
 import cn.wagentim.utils.StatementHelper;
 
 
@@ -31,7 +32,6 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
 	{
         Long id = entity.getId();
 
-        System.out.println("ID: " + id);
 		if( id <= 0 )
     	{
     		return (long) 0;
@@ -57,7 +57,6 @@ public abstract class AbstractPersistanceManager implements IPersistanceManager
 		em.getTransaction().begin();
 		em.persist(entity);
 		em.getTransaction().commit();
-
 		IEntity result = (IEntity) em.find(entity.getClass(), entity);
 		return result.getId();
     }

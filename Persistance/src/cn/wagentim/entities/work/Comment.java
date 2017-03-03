@@ -1,38 +1,21 @@
 package cn.wagentim.entities.work;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
 import cn.wagentim.basicutils.StringConstants;
 
-@Entity
-public class Comment
+public class Comment implements Serializable
 {
-	@Id
-	@GeneratedValue
-	private int id;
-	
-	private SheetTicket sheetTicket;
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -483529129999682203L;
+
 	private long time = 0;
 	
 	private String comment = StringConstants.EMPTY_STRING;
 	
 	private String author = StringConstants.EMPTY_STRING;
-
-	public int getId()
-	{
-		return id;
-	}
-
-	public void setId(int id)
-	{
-		this.id = id;
-	}
-
 
 	public long getTime()
 	{
@@ -64,15 +47,44 @@ public class Comment
 		this.author = author;
 	}
 
-	@ManyToOne
-	@JoinColumn(name="kpmID", nullable=false)
-	public SheetTicket getSheetTicket()
+	@Override
+	public int hashCode()
 	{
-		return sheetTicket;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
+		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
+		result = prime * result + (int) (time ^ (time >>> 32));
+		return result;
 	}
 
-	public void setSheetTicket(SheetTicket sheetTicket)
+	@Override
+	public boolean equals(Object obj)
 	{
-		this.sheetTicket = sheetTicket;
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Comment other = (Comment) obj;
+		if (author == null)
+		{
+			if (other.author != null)
+				return false;
+		}
+		else if (!author.equals(other.author))
+			return false;
+		if (comment == null)
+		{
+			if (other.comment != null)
+				return false;
+		}
+		else if (!comment.equals(other.comment))
+			return false;
+		if (time != other.time)
+			return false;
+		return true;
 	}
+	
 }

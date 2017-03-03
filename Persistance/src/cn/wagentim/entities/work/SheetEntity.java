@@ -9,7 +9,7 @@ import cn.wagentim.entities.web.IEntity;
 
 @Entity
 @Table(name="sheet")
-public class Sheet implements IEntity
+public class SheetEntity implements IEntity
 {
 	private long time = 0;
 	

@@ -9,7 +9,7 @@ import cn.wagentim.entities.web.IEntity;
 
 @Entity
 @Table(name="tickets")
-public final class Ticket implements IEntity
+public final class TicketEntity implements IEntity
 {
 	
 	/* A */
@@ -122,7 +122,7 @@ public final class Ticket implements IEntity
 		this.action = action;
 	}
 
-	public int getNumber()
+	public int getKPMID()
 	{
 		return number;
 	}

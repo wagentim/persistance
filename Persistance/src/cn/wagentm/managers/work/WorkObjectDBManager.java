@@ -1,6 +1,6 @@
 package cn.wagentm.managers.work;
 
-import cn.wagentim.entities.work.SheetTicket;
+import cn.wagentim.entities.work.SheetTicketEntity;
 import cn.wagentim.managers.ObjectDBManager;
 import de.wagentim.qlogger.channel.DefaultChannel;
 import de.wagentim.qlogger.channel.LogChannel;
@@ -13,7 +13,7 @@ public class WorkObjectDBManager extends ObjectDBManager
 			.getChannel(QLoggerService.addChannel(new DefaultChannel(WorkObjectDBManager.class.getSimpleName())));
 	
 	/* save one comment to the comment table */
-	public void saveTicketComment(final int number, SheetTicket comment)
+	public void saveTicketComment(final int number, SheetTicketEntity comment)
 	{
 		if( number <= 0 || null == comment )
 		{

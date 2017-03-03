@@ -7,7 +7,7 @@ import cn.wagentim.basicutils.Validator;
 
 public class ObjectDBManager extends AbstractPersistanceManager
 {
-	private static final String DB_PATH = "D:/db/";
+	public static final String DB_PATH = "D:/db/";
 	private EntityManager manager = null;
 	
 	
@@ -20,7 +20,6 @@ public class ObjectDBManager extends AbstractPersistanceManager
 		}
 		
 		manager = Persistence.createEntityManagerFactory(DB_PATH + dbName).createEntityManager();
-		
 	}
 
 	@Override
