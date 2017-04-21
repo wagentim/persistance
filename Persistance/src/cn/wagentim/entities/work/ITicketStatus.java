@@ -7,4 +7,5 @@ public interface ITicketStatus
 	public static final String STATUS_OPEN = "Open";
 	public static final String STATUS_FINISHED = "Finished";
 	public static final String STATUS_IGNORE = "Ignore";
+	public static final String STATUS_NEW = "New";
 }

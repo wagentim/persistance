@@ -9,7 +9,7 @@ import cn.wagentim.entities.web.IEntity;
 
 @Entity
 @Table(name="tickets")
-public final class TicketEntity implements IEntity
+public final class TicketEntity implements IEntity, ITicketStatus
 {
 	
 	/* A */
@@ -111,6 +111,9 @@ public final class TicketEntity implements IEntity
 	
 	/* BO */
 	private String verification = StringConstants.EMPTY_STRING;
+	
+	
+	private String ticketStatus = STATUS_OPEN;
 
 	public String getAction()
 	{
@@ -463,5 +466,15 @@ public final class TicketEntity implements IEntity
 				+ ", supplier=" + supplier + ", lStatus=" + lStatus + ", supplierResponse=" + supplierResponse
 				+ ", supplierInfo=" + supplierInfo + ", verificationStatus=" + verificationStatus
 				+ ", verificationSWVersion=" + verificationSWVersion + ", verification=" + verification + "]";
+	}
+
+	public String getTicketStatus()
+	{
+		return ticketStatus;
+	}
+
+	public void setTicketStatus(String ticketStatus)
+	{
+		this.ticketStatus = ticketStatus;
 	}
 }
